@@ -11,3 +11,31 @@ document.getElementById("tool").forEach(radio =>{
     })
 }    
 )
+
+//Task 3
+
+function shapesDrawings (tool, sX,sY,mouseX,mouseY){
+    drawingContext.clearRect(0,0,canvas.clientWidth,canvas.height)
+    if (tool === "line"){
+
+        drawingContext.beginPath()
+        drawingContext.lineTo(sX,sY)
+        drawingContext.moveTo(mouseX,mouseY)
+        drawingContext.stroke()
+    }
+    else if (tool === "circle" ){
+    const radius = Math.sqrt((mouseX- sX) * (mouseX - sX) + (mouseY - sY) * (mouseY - sY))
+    
+
+    
+    drawingContext.beginPath()
+    drawingContext.arc(sX,sY,radius,0,2 * Math.PI)
+    drawingContext.stroke()
+}
+   else if (tool === "rectangle"){
+    drawingContext.beginPath()
+    drawingContext.rect(sX,sY,mouseX - sX, mouseY - sY)
+    drawingContext.stroke()
+   }
+  
+    }
