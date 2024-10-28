@@ -39,3 +39,9 @@ function shapesDrawings (tool, sX,sY,mouseX,mouseY){
    }
   
     }
+
+//Task 4
+const clearButton = document.getElementById("clear")
+clearButton.addEventListener("click", () =>{
+    drawingContext.clearRect(0,0,canvas.clientWidth,canvas.height);
+})
